@@ -1,0 +1,24 @@
+{% extends 'shop/basic.html' %}
+{% block title%} My Book Spot Tracker{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+
+        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '330' %}
+        ORDER SUCCESS
+        You can track your order now......<br/>
+        Hope you had a good service.....
+        {% else %}
+        ORDER FAILURE
+        {% endif%}
+
+    </div>
+
+</div>
+{% endblock %}
+{% block js %}
+<script>
+    localStorage.clear()
+</script>
+{% endblock %}
